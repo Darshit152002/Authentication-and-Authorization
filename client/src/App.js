@@ -9,6 +9,9 @@ import "./pages/stylesheets/sizes.css";
 import "./pages/stylesheets/theme.css";
 import "./pages/stylesheets/form-elements.css";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile";
+import Admin from "./pages/Admin";
+
 function App() {
   return (
     <div>
@@ -23,6 +26,22 @@ function App() {
             }
           ></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          ></Route>
           <Route path="/register" element={<Register />}></Route>
         </Routes>
       </BrowserRouter>
