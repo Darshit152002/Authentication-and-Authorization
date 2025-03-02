@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Theatre = require("../models/theatreModel");
-// const Show = require("../models/showModel");
+const Show = require("../models/showModel");
 
 router.post("/add", async (req, res) => {
   try {
